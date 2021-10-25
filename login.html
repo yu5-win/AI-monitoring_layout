@@ -1,0 +1,59 @@
+<!-- 메인 화면 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!--뷰포트의 너비는 장치의 너비, 배율은 1배율-->
+  <title>세창 AI 관제시스템</title>  
+  <link rel="stylesheet" href="./css/login.css">   
+</head>
+<body>
+  <div class="loginbox">
+    <div class="loginright">
+      <div class="loginmain">
+        <form action="/loginfm" method="Post" name="loginform">
+          <div class="lgtitle">
+            <img src="./img/icons/login/log_logo.png" alt="세창화학 관리자 로그인">
+          </div>
+          <div class="lgbox" style="top:27px;">
+            <img src="./img/icons/login/loguser.png">
+            <input type="text" name="lgid" id="lgid" maxlength="20" class="lginput" placeholder="Id" autocomplete="off" autofocus>
+          </div>
+          <div class="lgbox" style="top:45px;">
+            <img src="./img/icons/login/logpw.png">
+            <input type="password" name="lgpw" id="lgpw" maxlength="20" class="lginput" placeholder="Password">
+          </div>
+          <div class="logup">
+            <a href="/index#">계정생성</a>
+          </div>
+          <div class="loginbtn" onclick="login()">
+            로그인
+          </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+<script src="./js/jquery-3.3.1.min.js"></script>
+<script src="./js/jquery-ui.min.js"></script> 
+<script>
+    function login(){
+      if(document.loginform.lgid.value==""){ // 아이디 빈칸
+        alert("아이디를 입력하여 주십시오.")
+        return;
+      }
+      else if(document.loginform.lgpw.value==""){ // 비밀번호 빈칸
+        alert("비밀번호를 입력하여 주십시오.")
+        return;
+      }
+   
+    document.loginform.submit(); // 폼 정보를 /loginfm 으로 보냄
+    } 
+    $("#lgpw").keydown(function(e){
+      if(e.keyCode==13){
+        login();
+      }
+    });
+</script>
+</html>

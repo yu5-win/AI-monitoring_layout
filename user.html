@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./css/user.css" />
+  <link rel="stylesheet" type="text/css" href="./css/common.css" />
+
+  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="main">
+    <div id="mySidenav" class="sidenav" style="text-align: center">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div>
+        <div><img src="./img/icons/side/admin.png" class="sideimg"></div>
+        <div style="padding-bottom: 30px;">관리자 설정</div>
+      </div>
+      <div>
+        <div><img src="./img/icons/side/factory.png" class="sideimg"></div>
+        <div style="padding-bottom: 30px;">작업장 관리</div>
+      </div>
+      <div>
+        <div><img src="./img/icons/side/equip.png" class="sideimg"></div>
+        <div style="padding-bottom: 30px;">장비 관리</div>
+      </div>
+      <div>
+        <div><img src="./img/icons/side/user.png" class="sideimg"></div>
+        <div style="padding-bottom: 30px;">작업자 관리</div>
+      </div>
+      <div style="padding-bottom: 30px;">모니터링</div>
+      <div>통합모니터링</div>
+      <div>인공지능 모니터링</div>
+      <div>지하 1층 작업장</div>
+      <div>1층 작업장</div>
+      <div>2층 작업장</div>
+      <div>3층 작업장</div>
+      <div style="position: absolute; left: 25px; bottom: 80px;"><img src="./img/icons/side/logout.png" class="sideimg" style="vertical-align: middle;"> 로그아웃</div>
+    </div>
+    <div style="margin-bottom: 30px">
+      <div class="top" style="margin-right: 30px; cursor: pointer;" onclick="openNav()"><i class="fas fa-bars"></i></div> <!--side menu icon-->
+      <div class="top">작업자 현황</div>
+      <div class="top" style="float: right;">한국타이어</div>
+    </div>
+
+    <div>
+      <div style="float: left;">
+        <div class="a" style="width: 710px; height: 426px">
+          <div>◈ 작업자 정보</div>
+          <div style="display: flex; width: 100%; align-items: center;">
+            <div style="width: 150px; height: 250px; border: 2px solid white; align-items: center; display: flex; padding-left: 70px"><img src="./img/icons/user.png" style="width: 100px;height: 100px;"></div>
+            <div style="padding-left: 50px; padding-right: 200px; font-size: 30px;">
+              <div>· 성명: 김수영</div>
+              <div>· 나이: 20</div>
+              <div>· 성별: 남자</div>
+              <div>· 직급: 7급 사원</div>
+              <div>· 부서: 제조1팀</div>
+            </div>
+          </div>
+          <table class="userinfo"  style="width: 100%">
+            <tbody>
+              <tr>
+                <td>키</td><td>180cm</td><td>체중</td><td>72kg</td>
+              </tr>
+              <tr>
+                <td>혈압</td><td>90~120</td><td>체온</td><td>36.2°c</td>
+              </tr>
+              <tr>
+                <td>기저질환</td><td colspan="3">특이사항 없음</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="a division2img">
+          <div>◈ 건강 상태</div>
+            <div style="display: flex; justify-content: space-around;">
+              <div>
+                <div class="airH">89%</div>
+                <canvas id="doughnut-chart7" width="150" height="130"></canvas>
+                <div class="healthstate">건강상태</div>
+              </div>
+              <table>
+                <thead>
+                  <th colspan="2">활동 예측</th>
+                </thead>
+                <tbody>
+                  <tr style="background-color: rgb(94,147,61)">
+                    <td>14:30:21</td><td>걷기</td>
+                  </tr>
+                  <tr>
+                    <td>14:29:20</td><td>달리기</td>
+                  </tr>
+                  <tr>
+                    <td>14:28:20</td><td style="color: red">넘어짐</td>
+                  </tr>
+                  <tr>
+                    <td>14:26:20</td><td>걷기</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+        <div class="a division2img">
+          <div>◈ 1층 공기질 상태</div>
+          <div style="display: flex; justify-content: space-around">
+            <div>
+              <div class="air">0.2ppm</div>
+              <canvas id="doughnut-chart1" width="150" height="130"></canvas>
+              <div style="text-align: center;">CO2</div>
+            </div>
+            <div>
+              <div class="air">0.2ppm</div>
+              <canvas id="doughnut-chart2" width="150" height="130"></canvas>
+              <div style="text-align: center;">VOCs</div>
+            </div>
+            <div>
+              <div class="air">0.1ppm</div>
+              <canvas id="doughnut-chart3" width="150" height="130"></canvas>
+              <div style="text-align: center;">미세먼지</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="a division2img">
+          <div>◈ 생체신호: 혈압</div>
+          <div class="linechart">
+            <div>
+              <canvas id="line-chart3" class="chart"></canvas>
+            </div>
+            <div class="legend">혈압: 80 ~ 120</div>
+          </div>
+        </div>
+        <div class="a division2img">
+          <div>◈ 생체신호: 심박수</div>
+          <div class="linechart">
+            <div>
+              <canvas id="line-chart4" class="chart"></canvas>
+            </div>
+            <div class="legend">심박수: 80</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="a division4">
+        <div>◈ 활동량 분석</div>
+        <div class="linechart">
+          <div>
+            <canvas id="line-chart5"></canvas>
+          </div>
+          <div class="legend">
+            <div>Gx: 0.98</div>
+            <div>Gy: 0.34</div>
+            <div>Gz: 9.88</div>
+          </div>
+        </div>
+      </div>
+      <div class="a division4">
+        <div>◈ 활동 예측</div>
+        <div class="linechart">
+          <div>
+            <canvas id="line-chart6"></canvas>
+          </div>
+          <div class="legend">
+            <div>걷기: 3,200</div>
+            <div>뛰기: 1,200</div>
+            <div>계단: 323</div>
+            <div>넘어짐: 3</div>
+            <div>추락: 0</div>
+          </div>
+        </div>
+      </div>
+      <div class="a division4">
+        <div>◈ 생체신호 이상탐지</div>
+        <div class="linechart">
+          <div>
+            <canvas id="line-chart7"></canvas>
+          </div>
+          <div class="legend">
+            <div>정상: 123</div>
+            <div>경고: 11</div>
+            <div>위험: 0</div>
+          </div>
+        </div>
+      </div>
+      <div class="a division4">
+        <div>◈ 공기질 이상탐지</div>
+        <div class="linechart">
+          <div>
+            <canvas id="line-chart8"></canvas>
+          </div>
+          <div class="legend">
+            <div>CO2: 2건</div>
+            <div>VOCs: 4건</div>
+            <div>미세먼지: 5건</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+    <div class="a division1">
+      <div>◈ 시스템 메세지</div>
+      <table style="width: 100%; height: 160px;" class="system-message">
+        <thead style="background-color: tomato;">
+          <th>작업자</th><th>위치</th><th>시간</th><th>내용</th><th>상태</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>김수영</td><td>1층</td><td>2021-06-19 14:28:20</td><td>넘어짐</td><td style="color: red">위험</td>
+          </tr>
+          <tr>
+            <td>김수영</td><td>1층</td><td>2021-06-19 14:28:21</td><td>생체신호 정상</td><td>정상</td>
+          </tr>
+          <tr>
+            <td>김수영</td><td>2층</td><td>2021-06-19 14:28:22</td><td>이동</td><td>정상</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+  <script src="./js/sideNav.js"></script>
+  <script src="./js/doughnut.js"></script>
+  <script src="./js/lineuser.js"></script>
+  <script src="./js/doughnutuser.js"></script>
+    
+</body>
+</html>

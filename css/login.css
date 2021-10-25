@@ -1,0 +1,105 @@
+.loginbox {
+  width: 400px;
+  height: 555px;
+  position: absolute;
+  top: calc(50% - 268px);
+  right: calc(50% - 200px);
+  background: white;
+  box-shadow: 20px 20px 20px #00000029;
+}
+.loginright {
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+body {
+  background-color: #1e1f21;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: right;
+}
+.sctitle {
+  height: 96px;
+  font-size: 40px;
+  font-weight: 400;
+  color: white;
+  margin-left: 20px;
+  position: relative;
+  top: 16px;
+  line-height: 50px;
+}
+.loginmain {
+  margin: 0 auto;
+  width: 85%;
+  height: calc(100% - 183px);
+  position: relative;
+  top: 52px;
+  text-align: center;
+}
+.lgtitle {
+  /*    height:35px;*/
+  font-size: 30px;
+  line-height: 35px;
+  font-weight: 600;
+  color: #dadada;
+}
+.lgbox {
+  position: relative;
+  width: calc(100% - 2px);
+  height: 48px;
+  border: solid 1px #dadada;
+  color: #ffffff;
+  line-height: 0px;
+  display: block;
+}
+.lgbox img {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  height: 26px;
+  width: 22px;
+}
+.lgbox input:focus {
+  outline: solid 2px #1b2c5a;
+}
+.lginput {
+  width: 100%;
+  height: calc(100% - 3px);
+  padding-top: 3px;
+  border: 0;
+  text-indent: 50px;
+  font-size: 20px;
+}
+.logup {
+  font-size: 15px;
+  font-weight: 100;
+  line-height: 1;
+  height: 10px;
+  color: #707070;
+  text-align: right;
+  margin-right: 6px;
+  top: 50px;
+  position: relative;
+}
+.logup a {
+  color: #707070;
+}
+.loginbtn {
+  top: 80px;
+  position: relative;
+  height: 50px;
+  width: 100%px;
+  background: #3a3b3d;
+  color: white;
+  line-height: 55px;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+form {
+  height: 100%;
+}

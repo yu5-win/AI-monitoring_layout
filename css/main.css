@@ -1,0 +1,27 @@
+body {
+  background-color: #1e1f21;
+  white-space: nowrap;
+  height: 98vh;
+}
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.box-size {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background-color: white;
+  text-align: center;
+  width: 25%;
+  height: 700px;
+}
+.box-size:hover {
+  cursor: pointer;
+}
+.box-size img {
+  width: 50%;
+}
